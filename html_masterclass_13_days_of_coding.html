@@ -3,96 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML Masterclass — 13 Days of Coding — Days 1–13</title>
+<title>HTML Masterclass — 13 Days of Coding</title>
 <style>
-:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233b;--ink:#edf3ff;--muted:#9eacc8;--line:#293654;--blue:#72a7ff;--cyan:#65e6db;--gold:#ffd166;--pink:#ff86b7;--green:#8de0a1}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top left,#172749 0,transparent 42%),var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1400px;margin:auto;padding:22px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 0 24px;border-bottom:1px solid var(--line)}.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#081226;font-weight:950;font-size:21px;box-shadow:0 8px 30px #65e6db22}.brand h1{font-size:19px;line-height:1.2;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.top-actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#1a2540;color:var(--ink);padding:10px 14px;border-radius:11px;font-weight:750}.btn.primary{background:var(--blue);color:#081226;border-color:var(--blue)}.btn:hover{filter:brightness(1.1)}.hero{padding:34px 0 26px;display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:900;text-transform:uppercase}.hero h2{font-size:clamp(29px,4.5vw,52px);line-height:1.05;letter-spacing:-1.8px;margin:10px 0 14px}.hero h2 span{color:var(--blue)}.hero p{max-width:720px;color:var(--muted);margin:0}.hero-card{padding:20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(140deg,#192846,#11192b)}.hero-card strong{font-size:13px;color:var(--muted)}.progress-line{height:8px;border-radius:9px;background:#283654;overflow:hidden;margin:12px 0}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .25s}.stats{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px}.layout{display:grid;grid-template-columns:265px minmax(0,1fr);gap:22px;align-items:start}.sidebar,.lesson-panel{border:1px solid var(--line);border-radius:18px;background:#10182a}.sidebar{position:sticky;top:12px;padding:14px;max-height:calc(100vh - 24px);overflow:auto}.search{width:100%;padding:11px 12px;border:1px solid var(--line);background:#0c1425;color:var(--ink);border-radius:11px;outline:none;margin-bottom:12px}.search:focus,textarea:focus,input:focus,select:focus{border-color:var(--blue);outline:2px solid #72a7ff22}.nav-title{font-size:11px;color:var(--muted);letter-spacing:1.5px;font-weight:900;margin:12px 8px}.lesson-nav{display:flex;flex-direction:column;gap:5px}.nav-item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:1px solid transparent;border-radius:10px;padding:9px;background:transparent;color:#cbd6ec}.nav-item .num{display:grid;place-items:center;width:30px;height:30px;flex-shrink:0;border-radius:9px;background:#1c2944;color:var(--blue);font-size:12px;font-weight:900}.nav-item .nav-label{font-size:13px;line-height:1.3}.nav-item.active{background:#1b2945;border-color:#34486d;color:white}.nav-item.done .num{background:#173a38;color:var(--cyan)}.lesson-panel{min-width:0;overflow:hidden}.lesson-head{padding:24px 25px;border-bottom:1px solid var(--line);background:linear-gradient(110deg,#172641,#11192b)}.lesson-kicker{display:flex;align-items:center;gap:8px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}.lesson-head h2{margin:8px 0 6px;font-size:clamp(24px,3vw,34px);line-height:1.2}.lesson-head p{margin:0;color:var(--muted)}.lesson-body{padding:24px}.section-title{font-size:16px;margin:0 0 10px}.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.info-card{border:1px solid var(--line);border-radius:14px;background:#131e33;padding:16px}.info-card p{margin:0;color:var(--muted);font-size:14px}.tag{display:inline-block;padding:4px 8px;border-radius:7px;background:#203151;color:var(--cyan);font:12px ui-monospace,monospace;margin:3px}.code-wrap{border:1px solid #2b3958;border-radius:14px;overflow:hidden;background:#080e1b;margin-top:15px}.code-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:#151f34;border-bottom:1px solid #2b3958;color:var(--muted);font-size:12px}.code-top button{border:1px solid #354766;background:#202e49;color:white;padding:6px 10px;border-radius:8px;font-size:12px}.code-wrap pre{margin:0;padding:16px;overflow:auto;max-height:370px;color:#d7e5ff;font:12.5px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}.practice{margin-top:18px;padding:18px;border:1px solid #344667;border-radius:15px;background:linear-gradient(135deg,#152440,#111a2d)}.practice h3{margin:0 0 6px;font-size:16px}.practice p{margin:0 0 12px;color:var(--muted);font-size:14px}.challenge-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.challenge{display:flex;gap:9px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:10px;background:#0e1728;color:#dce6f7;font-size:13px}.challenge input{accent-color:var(--cyan);margin-top:4px}.mark-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px}.status{font-size:12px;color:var(--muted)}.lesson-footer{display:flex;justify-content:space-between;gap:10px;padding:16px 24px;border-top:1px solid var(--line);background:#0e1626}.empty{padding:25px;color:var(--muted)}.editor-area{margin-top:20px}.editor-area textarea{width:100%;min-height:220px;resize:vertical;background:#080e1b;color:#d7e5ff;border:1px solid #2b3958;border-radius:12px;padding:14px;font:12.5px/1.6 ui-monospace,monospace}.editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.preview{width:100%;height:280px;background:white;border:0;border-radius:12px}.preview-frame{padding:10px;border:1px solid var(--line);border-radius:14px;background:#0a1120}.tip{font-size:12px;color:var(--muted);margin-top:8px}.footer{text-align:center;padding:28px 8px 8px;color:#7786a5;font-size:12px}.hidden{display:none!important}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.sidebar{position:relative;top:auto;max-height:none}.lesson-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.nav-item{min-width:0}.nav-item .nav-label{font-size:12px}}@media(max-width:560px){.app{padding:13px}.learn-grid,.challenge-list{grid-template-columns:1fr}.lesson-body{padding:16px}.lesson-head{padding:20px 17px}.lesson-footer{padding:14px}.lesson-nav{grid-template-columns:1fr 1fr}.hero h2{letter-spacing:-1px}.stats{font-size:11px}}
+:root{
+  --bg:#0a1020;--panel:#111a2e;--panel2:#17233b;--text:#edf3ff;--muted:#a7b5cf;
+  --line:#2a3855;--cyan:#53e4dc;--purple:#9d8cff;--pink:#ff7fbd;--green:#70e0a0;
+  --shadow:0 18px 50px #0003;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(ellipse at top left,#182a4b 0,transparent 42%),var(--bg);color:var(--text);line-height:1.6}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:var(--cyan)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px clamp(16px,4vw,56px);background:#0a1020eF;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#09111e;font-size:20px}
+.top-actions{display:flex;gap:9px;align-items:center}
+.small-btn,.primary-btn,.ghost-btn{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:var(--panel2);color:var(--text);font-weight:700}
+.primary-btn{background:linear-gradient(110deg,var(--cyan),#8ebaff);color:#071321;border:0}
+.small-btn:hover,.ghost-btn:hover{border-color:var(--cyan)}
+.hero{max-width:1200px;margin:auto;padding:62px 24px 34px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--cyan);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px}
+h1{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.04;letter-spacing:-2px;margin:16px 0}
+.gradient-text{background:linear-gradient(100deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:680px;color:var(--muted);font-size:1.08rem}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero-art{position:relative;min-height:260px;border:1px solid var(--line);border-radius:25px;padding:22px;background:linear-gradient(145deg,#192943,#101729);box-shadow:var(--shadow);overflow:hidden}
+.hero-art:before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:#53e4dc22;right:-50px;top:-70px;filter:blur(5px)}
+.code-window{position:relative;border:1px solid #3b4b69;border-radius:15px;overflow:hidden;background:#0b1221;transform:rotate(-2deg)}
+.window-head{display:flex;align-items:center;gap:6px;padding:12px;border-bottom:1px solid #27334b;color:#9aa9c3;font-size:.8rem}
+.dot{width:9px;height:9px;border-radius:50%;background:#ff7f7f}.dot:nth-child(2){background:#ffd166}.dot:nth-child(3){background:#70e0a0}
+.code-window pre{padding:14px;margin:0;white-space:pre-wrap;color:#c8d6f0;font:13px/1.8 Consolas,monospace}
+.pink-code{color:var(--pink)}.cyan-code{color:var(--cyan)}.purple-code{color:var(--purple)}
+.stats{max-width:1200px;margin:0 auto;padding:0 24px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{border:1px solid var(--line);background:#111a2dbb;padding:17px 19px;border-radius:15px}
+.stat strong{display:block;font-size:1.45rem}.stat span{color:var(--muted);font-size:.9rem}
+.progress-wrap{height:7px;border-radius:99px;background:#26334d;overflow:hidden;margin-top:12px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .3s}
+main{max-width:1200px;margin:auto;padding:12px 24px 70px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:25px 0 18px}
+.section-heading h2{font-size:1.8rem;margin:0}.section-heading p{color:var(--muted);margin:5px 0 0}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.search{flex:1;min-width:210px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 14px;color:var(--text);outline:none}
+.search:focus{border-color:var(--cyan)}
+.filter-btn{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:var(--panel);color:var(--muted);font-weight:700}
+.filter-btn.active{background:#193c49;border-color:var(--cyan);color:var(--cyan)}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:18px;align-items:start}
+.lesson-list{position:sticky;top:82px;max-height:calc(100vh - 100px);overflow:auto;background:#0e1729;border:1px solid var(--line);border-radius:17px;padding:10px}
+.lesson-item{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:transparent;color:var(--text);border:1px solid transparent;padding:12px;border-radius:12px;margin:2px 0}
+.lesson-item:hover{background:var(--panel2)}
+.lesson-item.active{background:#193443;border-color:#357a83}
+.day-num{flex:0 0 37px;height:37px;border-radius:11px;display:grid;place-items:center;background:#202d47;color:var(--cyan);font-weight:900;font-size:.85rem}
+.lesson-item.done .day-num{background:#163d32;color:var(--green)}
+.lesson-meta{min-width:0}.lesson-meta strong{display:block;font-size:.93rem}.lesson-meta small{display:block;color:var(--muted);margin-top:2px}
+.lesson-content{border:1px solid var(--line);background:#10192b;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.lesson-banner{padding:25px;background:linear-gradient(120deg,#1b3550,#20203e);border-bottom:1px solid var(--line)}
+.lesson-kicker{color:var(--cyan);font-weight:800;font-size:.78rem;letter-spacing:1.3px;text-transform:uppercase}
+.lesson-banner h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:7px 0}.lesson-banner p{color:#c1cce0;margin:0;max-width:750px}
+.lesson-body{padding:24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.chip{font-size:.78rem;padding:5px 9px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.lesson-body h3{margin:23px 0 9px;font-size:1.13rem}
+.lesson-body ul{padding-left:22px;color:#d0d9ea}.lesson-body li{margin:6px 0}
+.tip{border-left:3px solid var(--purple);background:#1a2037;padding:13px 15px;border-radius:0 10px 10px 0;color:#d7dcf4;margin:17px 0}
+.codebox{border:1px solid #34415c;background:#080e1b;border-radius:13px;overflow:hidden;margin:12px 0 18px}
+.codehead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 13px;border-bottom:1px solid #26334b;color:var(--muted);font-size:.82rem}
+.copy-btn{padding:6px 10px;border:1px solid #405170;border-radius:8px;background:#17243a;color:var(--text);font-weight:700;font-size:.8rem}
+.codebox pre{margin:0;padding:16px;overflow:auto;color:#c9dcf7;font:13px/1.75 Consolas,Monaco,monospace;white-space:pre}
+.preview{border:1px dashed #3c4c68;border-radius:13px;background:#f6f8fc;color:#202b40;padding:17px;margin:12px 0 20px}
+.preview h1,.preview h2,.preview h3{color:#2356a6;letter-spacing:normal;line-height:1.2;margin:5px 0 10px}
+.preview button{border:0;border-radius:5px;background:#2356a6;color:#fff;padding:8px 12px}
+.quiz{margin-top:25px;padding:17px;border:1px solid var(--line);border-radius:14px;background:#0c1424}
+.quiz h3{margin:0 0 12px}.quiz-option{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;color:#dbe5f7;cursor:pointer}
+.quiz-option input{margin-right:8px;accent-color:var(--cyan)}
+.quiz-feedback{min-height:24px;color:var(--muted);font-size:.9rem;margin-top:10px}
+.lesson-footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:24px}
+.lesson-footer button:disabled{opacity:.4;cursor:not-allowed}
+.empty{display:none;padding:22px;color:var(--muted);text-align:center}
+footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var(--muted);font-size:.9rem}
+.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#e7fff7;color:#0c3025;padding:10px 15px;border-radius:10px;font-weight:800;transition:.2s;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:42px}.hero-art{min-height:210px}.layout{grid-template-columns:1fr}.lesson-list{position:static;max-height:270px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}.lesson-item{padding:8px}.day-num{flex-basis:32px;height:32px}.stats{grid-template-columns:1fr}.stat{padding:13px 16px}}
+@media(max-width:520px){.topbar{padding:11px 13px}.brand{font-size:.9rem}.top-actions .small-btn{display:none}.hero{padding-left:17px;padding-right:17px}.hero-art{display:none}main{padding:8px 13px 50px}.stats{padding-left:17px;padding-right:17px}.lesson-list{grid-template-columns:1fr 1fr}.lesson-item{gap:7px}.lesson-meta strong{font-size:.78rem}.lesson-meta small{font-size:.7rem}.lesson-body{padding:16px}.lesson-banner{padding:20px}.codebox pre{font-size:12px}}
 </style>
 </head>
 <body>
-<div class="app">
 <header class="topbar">
- <div class="brand"><div class="logo">&lt;/&gt;</div><div><h1>HTML Masterclass — 13 Days of Coding</h1><p>13 lessons · Learn by exploring · Build your own page</p></div></div>
- <div class="top-actions"><button class="btn" id="resetProgress">Reset progress</button><button class="btn primary" id="openEditor">Open playground ↗</button></div>
-</header>
-<section class="hero">
- <div><div class="eyebrow">Beginner web design course</div><h2>From your first tag<br>to your <span>own website.</span></h2><p>Explore the 13 lesson days from your class material. Read the key idea, inspect the original-style example, complete the challenges, and experiment safely in the mini playground.</p></div>
- <div class="hero-card"><strong>YOUR LEARNING JOURNEY</strong><div class="progress-line"><div class="progress-fill" id="overallFill"></div></div><div class="stats"><span id="progressText">0 of 13 lessons completed</span><span id="progressPercent">0%</span></div><p class="tip">Your progress is saved in this browser on this device.</p></div>
-</section>
-<div class="layout">
- <aside class="sidebar"><input id="lessonSearch" class="search" placeholder="Search lessons or topics…" aria-label="Search lessons"><div class="nav-title">COURSE CONTENT</div><nav id="lessonNav" class="lesson-nav"></nav><p class="tip">Select a lesson to explore it. Tick off its challenges when you finish.</p></aside>
- <main class="lesson-panel" id="lessonPanel"></main>
-</div>
-<section class="lesson-panel editor-area" id="playground">
- <div class="lesson-head"><div class="lesson-kicker">✦ Practice zone</div><h2>HTML Playground</h2><p>Try changing the code and preview your own page. This is a safe, local preview.</p></div>
- <div class="lesson-body">
-  <div class="learn-grid">
-   <div><h3 class="section-title">Write your HTML</h3><textarea id="codeEditor" spellcheck="false"><!DOCTYPE html>
-<html>
-<head>
-  <title>My Favourite Things</title>
-</head>
-<body style="background-color: powderblue; font-family: Arial; text-align: center;">
-  <h1 style="color: darkblue;">My Favourite Things 🌟</h1>
-  <p>My favourite colour is blue.</p>
-  <p>My favourite food is pizza 🍕</p>
-  <p>My favourite sport is cricket 🏏</p>
-  <a href="https://sunnydale.edu.bd" target="_blank">Sunnydale Website</a>
-</body>
-</html></textarea>
-    <div class="editor-actions"><button class="btn primary" id="runCode">Run preview ▶</button><button class="btn" id="copyCode">Copy code</button><button class="btn" id="downloadCode">Download HTML</button><button class="btn" id="restoreExample">Restore example</button></div>
-    <p class="tip" id="editorMessage" aria-live="polite">Edit the text, colours, headings, and tags, then run your preview.</p></div>
-   <div><h3 class="section-title">Live preview</h3><div class="preview-frame"><iframe class="preview" id="preview" title="HTML preview" sandbox="allow-scripts allow-forms allow-popups"></iframe></div><p class="tip">External links open from the preview only when you click them.</p></div>
+  <div class="brand"><span class="brand-mark">&lt;/&gt;</span><span>HTML <span class="gradient-text">MASTERCLASS</span></span></div>
+  <div class="top-actions">
+    <button class="small-btn" id="resetProgress">Reset progress</button>
+    <button class="primary-btn" id="continueBtn">Continue learning →</button>
   </div>
- </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">✦ A beginner-friendly coding journey</div>
+    <h1>Build your first<br><span class="gradient-text">13 days of web magic.</span></h1>
+    <p>Learn HTML and CSS one small step at a time. Explore lessons, try code examples, test your knowledge, and track your progress as you build your own Sunnydale-inspired web pages.</p>
+    <div class="hero-buttons">
+      <button class="primary-btn" id="startBtn">Start Day 1 →</button>
+      <button class="ghost-btn" id="browseBtn">Explore all lessons</button>
+    </div>
+  </div>
+  <div class="hero-art" aria-label="Decorative code editor illustration">
+    <div class="code-window">
+      <div class="window-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:7px">my-first-page.html</span></div>
+      <pre><span class="pink-code">&lt;!DOCTYPE html&gt;</span>
+<span class="pink-code">&lt;html&gt;</span>
+  <span class="pink-code">&lt;h1&gt;</span><span class="cyan-code">Hello, world!</span><span class="pink-code">&lt;/h1&gt;</span>
+  <span class="pink-code">&lt;p&gt;</span><span class="purple-code">My coding journey starts here.</span><span class="pink-code">&lt;/p&gt;</span>
+<span class="pink-code">&lt;/html&gt;</span></pre>
+    </div>
+  </div>
 </section>
-<div class="footer">HTML Masterclass — 13 Days of Coding · Based on the supplied Day 1–13 class material · Keep experimenting, keep creating.</div>
-</div>
+
+<section class="stats" aria-label="Learning progress">
+  <div class="stat"><strong><span id="completedCount">0</span> / 13</strong><span>Lessons completed</span><div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div></div>
+  <div class="stat"><strong>13 days</strong><span>Short lessons, steady progress</span></div>
+  <div class="stat"><strong id="progressPercent">0%</strong><span>Your learning journey</span></div>
+</section>
+
+<main id="lessons">
+  <div class="section-heading">
+    <div><h2>Your learning path</h2><p>Choose a day, learn the idea, and try the example.</p></div>
+  </div>
+  <div class="filters">
+    <input class="search" id="searchInput" type="search" placeholder="Search lessons or topics…" aria-label="Search lessons">
+    <button class="filter-btn active" data-filter="all">All days</button>
+    <button class="filter-btn" data-filter="HTML">HTML</button>
+    <button class="filter-btn" data-filter="CSS">CSS</button>
+    <button class="filter-btn" data-filter="Practice">Practice</button>
+  </div>
+  <div class="layout">
+    <nav class="lesson-list" id="lessonList" aria-label="Lesson list"></nav>
+    <article class="lesson-content" id="lessonPanel" aria-live="polite"></article>
+  </div>
+</main>
+
+<footer>HTML Masterclass — 13 Days of Coding · Learn it, try it, make it yours.</footer>
+<div class="toast" id="toast" role="status">Copied!</div>
+
 <script>
 const lessons = [
-{title:"Your First Website",topic:"HTML structure and school introduction",icon:"🌱",goal:"Understand the basic shape of an HTML document and put text on a page.",learn:"Day 1 introduces the document, head, title, body, a large heading, and a paragraph about Sunnydale School, Dhaka-1212.",tags:["<html>","<head>","<title>","<body>","<h1>","<p>"],code:`<!DOCTYPE html>\n<html>\n<head>\n  <title>My first Web Site</title>\n</head>\n<body>\n  <h1>Sunnydale School, Dhaka-1212</h1>\n  <p>Sunnydale was established in 1985.</p>\n</body>\n</html>`,tasks:["Change the page title.","Change the main heading.","Add a second paragraph.","Save the file as index.html."],note:"The title appears on the browser tab; the h1 and paragraph appear inside the page."},
-{title:"Backgrounds & Headings",topic:"Colours, headings and inline styles",icon:"🎨",goal:"Use simple inline CSS to change the look of a page.",learn:"Day 2 uses a powder-blue background, a campus heading, and background colours on a heading and paragraph.",tags:["style","background-color","color","<h1>"],code:`<!DOCTYPE html>\n<html>\n<body style="background-color:powderblue;">\n  <h1>Bashundhara Campus, Block G, Road No. 17</h1>\n  <h1 style="background-color:green; color:white;">Some words about Sunnydale School</h1>\n  <p style="background-color:tomato;">Each one for everyone.</p>\n</body>\n</html>`,tasks:["Try a different page background.","Change green to purple.","Change the paragraph background.","Add a heading of your own."],note:"CSS declarations go inside the style attribute and use property: value;"},
-{title:"Links & Buttons",topic:"Anchor links and click actions",icon:"🔗",goal:"Create a link to a website and learn that buttons can respond to clicks.",learn:"Day 3 introduces a Prothom Alo link and a button. The pasted button example contains typos, so this working example shows the intended idea.",tags:["<a>","href","<button>","onclick"],code:`<!DOCTYPE html>\n<html>\n<body>\n  <a href="https://www.prothomalo.com/" target="_blank">Visit Prothom Alo!</a>\n  <h2>A famous newspaper of Bangladesh</h2>\n  <button onclick="alert('Hello, readers!')">Click me!</button>\n</body>\n</html>`,tasks:["Change the link text.","Open the link in a new tab.","Change the alert message.","Add a link to Sunnydale."],note:"Use href to set a link destination. JavaScript inside onclick runs when the button is clicked."},
-{title:"Links & Student Challenges",topic:"Personal colours and moving text",icon:"🎯",goal:"Combine links with small creative challenges.",learn:"Day 4 links to the Sunnydale website and lists 10 challenges: favourite background, five text colours, moving name, slow and fast text, bouncing message, rainbow message, announcement, emojis, and a personal page.",tags:["target=_blank","<hr>","challenge list","announcement"],code:`<h2>Create a Link</h2>\n<p>Visit <a href="https://sunnydale.edu.bd" target="_blank">Sunnydale Website</a>.</p>\n<hr>\n<h2 style="background-color:green;color:white;padding:10px;">🎯 Student Challenges</h2>\n<p><b>Challenge 1:</b> Change the background to your favourite colour.</p>\n<p><b>Challenge 2:</b> Write your name using 5 different colours.</p>\n<p><b>Challenge 9:</b> Add three emojis to your webpage.</p>`,tasks:["Add a link to Sunnydale.","Choose a page background.","Write your name in five colours.","Add three emojis."],note:"The full list of ten challenges appears in the original lesson. Try them one at a time."},
-{title:"Announcement Board",topic:"Announcements, emojis and moving text",icon:"📢",goal:"Make a school announcement stand out using colour, borders, and text.",learn:"Day 5 repeats the student challenges and adds the announcement: “Today is our Fifth Computer Class at Computer Lab!”",tags:["<div>","border","padding","<marquee>"],code:`<div style="background-color:yellow;border:5px dashed red;padding:15px;">\n  <h2 style="text-align:center;color:red;">📢 IMPORTANT ANNOUNCEMENT 📢</h2>\n  <marquee behavior="alternate" scrollamount="6" style="color:blue;font-size:24px;">\n    🎉 Today is our Fifth Computer Class at Computer Lab! 🎉\n  </marquee>\n  <p style="text-align:center;font-size:20px;">Make webpages colourful and interesting!</p>\n</div>`,tasks:["Change the announcement colour.","Edit the announcement sentence.","Add an emoji to the heading.","Try changing the border style."],note:"<marquee> is an old/deprecated element. It is kept here because it appears in the class material; CSS animation is the modern alternative."},
-{title:"Tables & Timetables",topic:"Rows, columns and table tags",icon:"📊",goal:"Organise information in rows and columns.",learn:"Day 6 creates a student table and a colourful timetable. The key tags are table, tr, th, and td.",tags:["<table>","<tr>","<th>","<td>","cellpadding"],code:`<table border="1" cellpadding="10" cellspacing="0" style="background-color:white;text-align:center;width:100%;">\n  <tr style="background-color:lightblue;">\n    <th>Student</th><th>Favourite Subject</th><th>Favourite Sport</th><th>Emoji</th>\n  </tr>\n  <tr><td>Ayan</td><td>Computer Science</td><td>Cricket</td><td>🏏</td></tr>\n  <tr><td>Sarah</td><td>Science</td><td>Swimming</td><td>🏊</td></tr>\n  <tr><td>Zayan</td><td>Mathematics</td><td>Football</td><td>⚽</td></tr>\n</table>`,tasks:["Add another student row.","Change the header colour.","Add a column called Hobby.","Create a three-day timetable."],note:"A table row uses tr. Header cells use th; ordinary cells use td."},
-{title:"Table Styling & Padding",topic:"Borders and spacing inside cells",icon:"🧩",goal:"Make tables easier to read with borders and padding.",learn:"Day 7 uses CSS to give the table, header cells, and data cells blue borders and different padding on each side.",tags:["border","border-collapse","padding-top","padding-left"],code:`<style>\ntable, th, td {\n  border: 2px solid blue;\n  border-collapse: collapse;\n}\nth, td {\n  padding-top: 5px;\n  padding-bottom: 5px;\n  padding-left: 30px;\n  padding-right: 40px;\n}\n</style>\n<table style="width:60%">\n  <tr><th>Firstname</th><th>Lastname</th><th>Grade</th></tr>\n  <tr><td>Adeeba</td><td>Shareen</td><td>Very Good</td></tr>\n</table>`,tasks:["Change the border colour.","Try 10px padding on all sides.","Make borders collapse.","Add one more student."],note:"Padding is the space between a cell's content and its border."},
-{title:"Links & Challenge Review",topic:"Revisiting links and announcement boards",icon:"🔁",goal:"Practise familiar skills by combining links, challenges, and an announcement.",learn:"Day 8 revisits the Sunnydale link and the ten student challenges, then repeats the announcement-board activity.",tags:["links","student challenges","announcement","emojis"],code:`<p>Click here to visit <a href="https://sunnydale.edu.bd" target="_blank">Sunnydale Website</a>.</p>\n<h2 style="background-color:green;color:white;padding:10px;">🎯 Student Challenges</h2>\n<p>Change the page background to your favourite colour.</p>\n<div style="background-color:yellow;border:5px dashed red;padding:15px;">\n  <h2 style="text-align:center;color:red;">📢 IMPORTANT ANNOUNCEMENT 📢</h2>\n  <p>Computer Class is AWESOME! 🎉</p>\n</div>`,tasks:["Make the link open in a new tab.","Create a colourful heading.","Add a simple announcement.","Personalise the page."],note:"Revisiting the same skills is useful: try to recreate the result without looking at the example."},
-{title:"Rainbow Moving Text",topic:"Colourful letters and announcement design",icon:"🌈",goal:"Style individual letters and combine colours with motion.",learn:"Day 9 creates rainbow-coloured letters spelling RAINBOW HTML and repeats the announcement board.",tags:["<span>","color","<marquee>","font-size"],code:`<marquee behavior="alternate" scrollamount="8" style="background-color:white;font-size:30px;">\n  <span style="color:red;">R</span><span style="color:orange;">A</span><span style="color:gold;">I</span><span style="color:green;">N</span><span style="color:blue;">B</span><span style="color:indigo;">O</span><span style="color:violet;">W</span>\n  🌈 HTML\n</marquee>`,tasks:["Change the word to your name.","Give each letter a different colour.","Change the background.","Try a CSS animation instead of marquee."],note:"span lets you style a small piece of text without starting a new block."},
-{title:"HTML Speed Race",topic:"Moving emoji and speed values",icon:"🏁",goal:"Compare movement speeds and review the previous challenges.",learn:"Day 10 makes three moving emoji—turtle, rabbit, and racing car—with different scrollamount values. The lesson notes that marquee is deprecated.",tags:["scrollamount","emoji","movement","deprecated"],code:`<h2 style="text-align:center;color:darkred;">🏆 BONUS: HTML SPEED RACE</h2>\n<p style="text-align:center;">Which moving object will win?</p>\n<marquee scrollamount="4" style="font-size:30px;">🐢</marquee>\n<marquee scrollamount="9" style="font-size:30px;">🐇</marquee>\n<marquee scrollamount="16" style="font-size:30px;">🏎️</marquee>\n<h2 style="text-align:center;color:blue;">⭐ Keep Experimenting • Keep Creating • Keep Learning 🚀</h2>`,tasks:["Change the turtle's speed.","Choose three different emoji.","Add a race title.","Explain which scrollamount is fastest."],note:"In this example, a larger scrollamount makes the emoji move faster. Modern projects can recreate this with CSS animations."},
-{title:"CSS Animation",topic:"Keyframes, duration and infinite motion",icon:"🟥",goal:"Animate a square through positions and colours.",learn:"Day 11 defines a 100×100 red square and an animation called myAnimation that changes its colour and position at five keyframes.",tags:["@keyframes","animation-duration","animation-iteration-count","position:relative"],code:`<style>\n#box{width:100px;height:100px;background:red;position:relative;animation:myAnimation 3s infinite;}\n@keyframes myAnimation{\n  0%{background:red;left:0;top:0;}\n  25%{background:yellow;left:200px;top:0;}\n  50%{background:blue;left:200px;top:200px;}\n  75%{background:green;left:0;top:200px;}\n  100%{background:red;left:0;top:0;}\n}\n</style>\n<div id="box"></div>`,tasks:["Change the square's size.","Set duration to 5 seconds.","Add a new keyframe colour.","Make the animation run only twice."],note:"The supplied lesson uses a general div selector; this example gives the square an ID so it doesn't animate every div on the page."},
-{title:"Build a Profile Card",topic:"Images, rounded corners and profile details",icon:"👤",goal:"Combine an image, headings, facts, and a favourite website link.",learn:"Day 12 builds a profile card with a circular profile picture, name, class, favourite subject, sport, hobby, and website link.",tags:["<img>","border-radius","text-align","<a>"],code:`<div style="width:330px;background-color:white;border:4px solid cornflowerblue;border-radius:20px;padding:15px;text-align:center;color:#222;">\n  <img src="https://picsum.photos/180/180" width="180" height="180" alt="Profile Picture" style="border-radius:50%;border:5px solid gold;">\n  <h2 style="color:royalblue;">My Name is Alex</h2>\n  <p>🎓 Class: VI</p><p>💻 Favourite Subject: Computer Science</p>\n  <p>🏏 Favourite Sport: Cricket</p><p>🎮 Hobby: Gaming</p>\n  <a href="https://www.wikipedia.org" target="_blank">My Favourite Website</a>\n</div>`,tasks:["Change Alex to your name.","Change the class and hobby.","Make the image circular.","Change the card border colour."],note:"border-radius:50% makes a square image look circular when its width and height are equal."},
-{title:"My Favourite Things — Final Project",topic:"Bring all your HTML skills together",icon:"🏆",goal:"Create a personal webpage that meets all ten requirements and try the five bonus challenges.",learn:"Day 13 asks for a large name heading, picture, favourite colour, food, sport, subject, website link, a table with at least three favourite things, three emojis, and moving text. Five bonus challenges extend the project.",tags:["heading","image","link","table","emoji","animation"],code:`<h1 style="color:darkorange;text-align:center;">My Favourite Things 🌟</h1>\n<img src="https://picsum.photos/180/180" alt="A sample picture" style="width:150px;border-radius:50%;">\n<p>Favourite colour: Blue 💙</p><p>Favourite food: Pizza 🍕</p>\n<p>Favourite sport: Cricket 🏏</p><p>Favourite subject: Computer Science 💻</p>\n<a href="https://sunnydale.edu.bd" target="_blank">My favourite website</a>\n<table border="1" cellpadding="8"><tr><th>Favourite thing</th><th>Why I like it</th></tr><tr><td>Cricket</td><td>It's exciting!</td></tr><tr><td>Science</td><td>I like discoveries.</td></tr><tr><td>Pizza</td><td>It's delicious.</td></tr></table>\n<p>🎉 🌈 🚀</p>\n<p style="color:purple;">Keep learning and creating!</p>`,tasks:["Add your name as a large heading.","Add one picture and favourite colour, food, sport, and subject.","Add a favourite website link.","Make a table with at least three favourite things.","Add at least three emojis and moving text.","Bonus: make the image circular.","Bonus: colour the table cells differently.","Bonus: style the link like a button.","Bonus: add a gallery of three images.","Bonus: make one picture clickable."],note:"Use the playground below to customise and download a standalone HTML page. Check each requirement as you complete it."}
+ {day:1,title:"Meet HTML",category:"HTML",time:"10 min",level:"Beginner",summary:"Understand what HTML does and build the skeleton of a web page.",learn:["HTML gives a webpage its structure.","Most HTML elements use an opening tag and a closing tag.","The page starts with <!DOCTYPE html>, then html, head, and body."],code:`<!DOCTYPE html>\n<html lang="en">\n<head>\n  <title>My First Page</title>\n</head>\n<body>\n  <h1>Hello, Sunnydale!</h1>\n  <p>This is my first webpage.</p>\n</body>\n</html>`,tip:"Try changing the heading and paragraph to make the page yours.",question:"Which tag contains the visible webpage content?",options:["<head>","<body>","<title>"],answer:1,explain:"The body contains the content people see on the page.",preview:"basic"},
+ {day:2,title:"Headings & Paragraphs",category:"HTML",time:"10 min",level:"Beginner",summary:"Organize ideas using headings and paragraphs.",learn:["Use h1 for the main heading.","Use h2 and h3 for subheadings.","Use p for a paragraph; headings are not just for making text big."],code:`<h1>My Student Page</h1>\n<h2>About Me</h2>\n<p>Hello! I enjoy science and coding.</p>\n<h2>My Goal</h2>\n<p>I want to create useful websites.</p>`,tip:"A page should usually have one clear main heading, followed by useful subheadings.",question:"Which tag is best for a normal paragraph?",options:["<p>","<h1>","<table>"],answer:0,explain:"The p element represents a paragraph.",preview:"text"},
+ {day:3,title:"Colours & Backgrounds",category:"CSS",time:"12 min",level:"Beginner",summary:"Use CSS to style text and page backgrounds.",learn:["CSS controls the appearance of HTML.","A CSS rule contains a selector and declarations.","Use color for text and background-color for an element's background."],code:`<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body {\n    background-color: lightblue;\n    color: darkblue;\n    font-family: Arial;\n  }\n</style>\n</head>\n<body>\n  <h1>Colourful Coding</h1>\n  <p>CSS makes pages look better.</p>\n</body>\n</html>`,tip:"Named colours are easy to remember. Hex colours such as #2456a6 give you more choice.",question:"Which CSS property changes text colour?",options:["background-color","font-size","color"],answer:2,explain:"The color property changes the foreground text colour.",preview:"colour"},
+ {day:4,title:"Moving Text & Marquees",category:"Practice",time:"10 min",level:"Beginner",summary:"Explore moving text and learn why older HTML examples sometimes use marquee.",learn:["The old marquee tag can move text in some browsers.","Marquee is obsolete, so it should only be used when learning legacy examples.","For modern projects, CSS animations are a better choice."],code:`<!-- Legacy lesson example -->\n<marquee>Welcome to our computer class!</marquee>\n\n<!-- Modern alternative -->\n<p class=\"moving\">Welcome to our computer class!</p>\n<style>\n.moving {\n  animation: slide 5s linear infinite alternate;\n}\n@keyframes slide {\n  from { transform: translateX(0); }\n  to { transform: translateX(40px); }\n}\n</style>`,tip:"If your teacher asks you to practise marquee specifically, keep that example separate from modern projects.",question:"Which approach is preferred for new moving-text effects?",options:["CSS animation","The font tag","A table"],answer:0,explain:"CSS animations are the modern approach for motion effects.",preview:"moving"},
+ {day:5,title:"Announcement Box",category:"HTML",time:"10 min",level:"Beginner",summary:"Make an announcement stand out with a styled box.",learn:["Use a div to group related content.","Padding creates space inside a box.","Border, background, and border-radius help the box stand out."],code:`<div class="announcement">\n  <strong>Announcement</strong>\n  <p>Today is our Fifth Computer Class at Computer Lab!</p>\n</div>\n<style>\n.announcement {\n  background: #fff3cd;\n  border: 2px solid #f0bd4f;\n  padding: 15px;\n  border-radius: 10px;\n}\n</style>`,tip:"Keep announcement text short so readers can understand it quickly.",question:"Which CSS property adds space inside the announcement box?",options:["margin","padding","outline"],answer:1,explain:"Padding adds space between the content and the border.",preview:"announcement"},
+ {day:6,title:"Emojis & Special Characters",category:"HTML",time:"8 min",level:"Beginner",summary:"Add a little personality with symbols and emojis.",learn:["Emojis can be typed directly into UTF-8 HTML files.","The meta charset UTF-8 helps display a wide range of characters.","Use emojis where they support the meaning, not in every sentence."],code:`<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8\">\n  <title>My Favourites</title>\n</head>\n<body>\n  <h1>😊 My Favourites</h1>\n  <p>💙 Colour: Blue</p>\n  <p>💻 Hobby: Coding</p>\n  <p>🍕 Food: Pizza</p>\n</body>\n</html>`,tip:"If an emoji looks like a square, check that your file is saved as UTF-8.",question:"Which character encoding is commonly used for modern HTML pages?",options:["UTF-8","ASCII art only","Binary text"],answer:0,explain:"UTF-8 supports a broad range of characters and emoji.",preview:"emoji"},
+ {day:7,title:"My Personal Webpage",category:"Practice",time:"15 min",level:"Beginner",summary:"Combine headings, paragraphs, links, and lists into a personal page.",learn:["Use a heading to introduce the page.","Use a list for favourite things or goals.","Use an anchor tag to link to another page or website."],code:`<h1>Welcome to My Page</h1>\n<p>My name is Alex and I enjoy coding.</p>\n<h2>My Hobbies</h2>\n<ul>\n  <li>Reading</li>\n  <li>Science</li>\n  <li>Building websites</li>\n</ul>\n<a href=\"https://example.com\">Visit a website</a>`,tip:"Replace the sample name and hobbies with your own details before submitting your work.",question:"Which tag creates a hyperlink?",options:["<a>","<img>","<li>"],answer:0,explain:"The a element creates a hyperlink using its href attribute.",preview:"personal"},
+ {day:8,title:"Tables & Timetables",category:"HTML",time:"12 min",level:"Beginner",summary:"Present a simple timetable using rows and cells.",learn:["table creates a table.","tr creates a row; th creates a heading cell; td creates a data cell.","Use tables for tabular information, not for laying out an entire website."],code:`<table>\n  <tr><th>Day</th><th>Subject</th></tr>\n  <tr><td>Sunday</td><td>Math</td></tr>\n  <tr><td>Monday</td><td>Science</td></tr>\n  <tr><td>Tuesday</td><td>ICT</td></tr>\n</table>`,tip:"Make sure each row has the correct number of cells.",question:"Which tag creates a table row?",options:["<td>","<tr>","<th>"],answer:1,explain:"The tr element groups the cells in one table row.",preview:"table"},
+ {day:9,title:"Borders & Spacing",category:"CSS",time:"12 min",level:"Beginner",summary:"Improve the look of tables and cards with borders and spacing.",learn:["border draws an edge around an element.","padding creates inner space; margin creates outer space.","border-collapse: collapse makes adjacent table borders join."],code:`.card {\n  border: 2px solid #2456a6;\n  padding: 16px;\n  margin: 12px 0;\n  border-radius: 8px;\n}\ntable {\n  width: 100%;\n  border-collapse: collapse;\n}\nth, td {\n  border: 1px solid #bbb;\n  padding: 8px;\n}`,tip:"Remember: padding is inside the border; margin is outside it.",question:"Which property adds space outside an element's border?",options:["padding","margin","border"],answer:1,explain:"Margin creates space outside the border.",preview:"border"},
+ {day:10,title:"Rainbow Text",category:"CSS",time:"10 min",level:"Beginner",summary:"Use a gradient to create colourful text.",learn:["A linear gradient blends colours across a direction.","background-clip: text clips the background to the text shape.","Use a fallback text colour for browsers that do not support the effect."],code:`<h1 class=\"rainbow\">Rainbow Coding!</h1>\n<style>\n.rainbow {\n  color: #2456a6;\n  background: linear-gradient(90deg,\n    red, orange, yellow, green, blue, violet);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n</style>`,tip:"Try using three colours instead of six for a cleaner look.",question:"Which CSS function creates a smooth colour blend?",options:["linear-gradient()","rotate()","border-box()"],answer:0,explain:"linear-gradient() creates a gradient between colours.",preview:"rainbow"},
+ {day:11,title:"HTML Speed Race",category:"Practice",time:"12 min",level:"Beginner",summary:"Create a playful race and practise repeated elements and animation.",learn:["Repeated HTML elements can create separate racing lanes.","CSS keyframes describe the stages of an animation.","Buttons can restart animations by removing and re-adding an animation class."],code:`<div class=\"track\"><span class=\"racer turtle\">🐢</span></div>\n<div class=\"track\"><span class=\"racer rabbit\">🐇</span></div>\n<div class=\"track\"><span class=\"racer car\">🚗</span></div>\n<style>\n.track { background:#e7edf5; padding:8px; margin:8px 0; }\n.racer { display:inline-block; animation: race 4s linear infinite alternate; }\n.rabbit { animation-duration:2.5s; }\n.car { animation-duration:1.5s; }\n@keyframes race { to { transform:translateX(220px); } }\n</style>`,tip:"For a modern project, use CSS animation rather than the obsolete marquee tag.",question:"What defines the stages of a CSS animation?",options:["@keyframes","<table>","href"],answer:0,explain:"The @keyframes rule defines the animation's stages.",preview:"race"},
+ {day:12,title:"Put It All Together",category:"Practice",time:"15 min",level:"Beginner",summary:"Plan a simple student page with clear sections and consistent styling.",learn:["Group related content into sections.","Use reusable CSS classes to keep styles consistent.","Check that your links, headings, and table content are correct."],code:`<header>\n  <h1>Welcome to Sunnydale!</h1>\n  <p>My Student Web Page</p>\n</header>\n<section>\n  <h2>About Me</h2>\n  <p>I enjoy learning and creating websites.</p>\n</section>\n<section>\n  <h2>My Goals</h2>\n  <ul><li>Learn HTML</li><li>Practise CSS</li></ul>\n</section>`,tip:"Build the structure first. Add colour and decoration after the content works.",question:"What is a good first step when building a webpage?",options:["Add lots of animations","Plan the content and structure","Choose ten fonts"],answer:1,explain:"A clear structure makes the page easier to build and understand.",preview:"sections"},
+ {day:13,title:"CSS Animation Finale",category:"CSS",time:"15 min",level:"Beginner",summary:"Finish the course with a square that moves using CSS keyframes.",learn:["@keyframes names an animation and defines its stages.","animation-duration controls how long one cycle takes.","animation-iteration-count can repeat an animation."],code:`<div class=\"animation-stage\">\n  <div class=\"moving-square\"></div>\n</div>\n<style>\n.animation-stage {\n  height:110px; background:#eaf0ff;\n  padding:10px; border-radius:8px;\n}\n.moving-square {\n  width:35px; height:35px; background:#e84343;\n  animation: move 3s ease-in-out infinite alternate;\n}\n@keyframes move {\n  from { transform:translateX(0) rotate(0); }\n  to { transform:translateX(230px) rotate(180deg); }\n}\n</style>`,tip:"Change the duration or the final position to experiment with the animation.",question:"Which property controls how long an animation cycle lasts?",options:["animation-duration","font-family","text-align"],answer:0,explain:"animation-duration sets the length of one animation cycle.",preview:"animation"}
 ];
-let current=0;
-const nav=document.getElementById('lessonNav'), panel=document.getElementById('lessonPanel'), search=document.getElementById('lessonSearch');
-let done=JSON.parse(localStorage.getItem('sd-html-done')||'{}');
-let checked=JSON.parse(localStorage.getItem('sd-html-tasks')||'{}');
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function save(){localStorage.setItem('sd-html-done',JSON.stringify(done));localStorage.setItem('sd-html-tasks',JSON.stringify(checked));}
-function updateProgress(){let n=lessons.filter((_,i)=>done[i]).length;document.getElementById('overallFill').style.width=(n/13*100)+'%';document.getElementById('progressText').textContent=n+' of 13 lessons completed';document.getElementById('progressPercent').textContent=Math.round(n/13*100)+'%';}
-function renderNav(filter=''){nav.innerHTML='';lessons.forEach((l,i)=>{if(!(l.title+' '+l.topic+' '+l.tags.join(' ')).toLowerCase().includes(filter.toLowerCase()))return;let b=document.createElement('button');b.className='nav-item'+(i===current?' active':'')+(done[i]?' done':'');b.innerHTML=`<span class="num">${done[i]?'✓':String(i+1).padStart(2,'0')}</span><span class="nav-label">${l.icon} ${esc(l.title)}</span>`;b.onclick=()=>{current=i;renderNav(search.value);renderLesson();};nav.appendChild(b);});if(!nav.children.length)nav.innerHTML='<div class="empty">No lessons found.</div>';}
-function renderLesson(){let l=lessons[current], taskState=checked[current]||{};panel.innerHTML=`<div class="lesson-head"><div class="lesson-kicker">${l.icon} DAY ${current+1} OF 13</div><h2>${esc(l.title)}</h2><p>${esc(l.topic)}</p></div><div class="lesson-body"><div class="learn-grid"><div class="info-card"><h3 class="section-title">🎯 Learning goal</h3><p>${esc(l.goal)}</p></div><div class="info-card"><h3 class="section-title">📘 What this lesson covers</h3><p>${esc(l.learn)}</p></div></div><div style="margin-top:17px"><h3 class="section-title">Key tags & ideas</h3>${l.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="code-wrap"><div class="code-top"><span>EXAMPLE CODE · Day ${current+1}</span><button id="copyLesson">Copy example</button></div><pre><code>${esc(l.code)}</code></pre></div><div class="info-card" style="margin-top:14px;border-color:#3c5a63"><h3 class="section-title">💡 Helpful note</h3><p>${esc(l.note)}</p></div><div class="practice"><h3>✅ Practice checklist</h3><p>Complete these mini-tasks, then mark the lesson as finished.</p><div class="challenge-list">${l.tasks.map((t,j)=>`<label class="challenge"><input type="checkbox" data-task="${j}" ${taskState[j]?'checked':''}><span>${esc(t)}</span></label>`).join('')}</div><div class="mark-row"><span class="status" id="taskCount"></span><button class="btn primary" id="markDone">${done[current]?'✓ Lesson completed':'Mark lesson complete'}</button></div></div></div><div class="lesson-footer"><button class="btn" id="prevLesson" ${current===0?'disabled':''}>← Previous</button><span class="status">Lesson ${current+1} / 13</span><button class="btn primary" id="nextLesson" ${current===12?'disabled':''}>Next lesson →</button></div>`;
-function count(){let c=panel.querySelectorAll('[data-task]:checked').length;panel.querySelector('#taskCount').textContent=c+' of '+l.tasks.length+' tasks completed';}
-panel.querySelectorAll('[data-task]').forEach(el=>el.addEventListener('change',()=>{checked[current]=checked[current]||{};checked[current][el.dataset.task]=el.checked;save();count();}));
-panel.querySelector('#copyLesson').onclick=async()=>{try{await navigator.clipboard.writeText(l.code);panel.querySelector('#copyLesson').textContent='Copied!';}catch(e){panel.querySelector('#copyLesson').textContent='Select code to copy';}};
-panel.querySelector('#markDone').onclick=()=>{done[current]=!done[current];save();renderNav(search.value);updateProgress();renderLesson();};
-panel.querySelector('#prevLesson').onclick=()=>{if(current>0){current--;renderNav(search.value);renderLesson();}};
-panel.querySelector('#nextLesson').onclick=()=>{if(current<12){current++;renderNav(search.value);renderLesson();window.scrollTo({top:0,behavior:'smooth'});}};
-count();}
-search.addEventListener('input',()=>renderNav(search.value));
-document.getElementById('resetProgress').onclick=()=>{if(confirm('Reset all lesson progress and checklist ticks?')){done={};checked={};save();renderNav(search.value);renderLesson();updateProgress();}};
-document.getElementById('openEditor').onclick=()=>document.getElementById('playground').scrollIntoView({behavior:'smooth'});
-const editor=document.getElementById('codeEditor'), preview=document.getElementById('preview');
-const starter=editor.value;
-function run(){preview.srcdoc=editor.value;document.getElementById('editorMessage').textContent='Preview updated successfully.';}
-document.getElementById('runCode').onclick=run;
-document.getElementById('copyCode').onclick=async()=>{try{await navigator.clipboard.writeText(editor.value);document.getElementById('editorMessage').textContent='HTML copied to clipboard.';}catch(e){editor.select();document.getElementById('editorMessage').textContent='Code selected. Press Ctrl+C to copy.';}};
-document.getElementById('downloadCode').onclick=()=>{const blob=new Blob([editor.value],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='my-favourite-things.html';a.click();URL.revokeObjectURL(a.href);document.getElementById('editorMessage').textContent='Your HTML download has started.';};
-document.getElementById('restoreExample').onclick=()=>{editor.value=starter;run();document.getElementById('editorMessage').textContent='Starter example restored.';};
-renderNav();renderLesson();updateProgress();run();
+
+let activeDay = 1;
+let filter = "all";
+let completed = JSON.parse(localStorage.getItem("htmlMasterclassCompleted") || "[]");
+const listEl = document.getElementById("lessonList");
+const panelEl = document.getElementById("lessonPanel");
+const searchEl = document.getElementById("searchInput");
+const toastEl = document.getElementById("toast");
+
+function escapeHTML(text){
+ return String(text).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+}
+function renderList(){
+ const query = searchEl.value.trim().toLowerCase();
+ const visible = lessons.filter(l => (filter==="all" || l.category===filter) && (l.title+" "+l.summary+" "+l.category+" "+l.learn.join(" ")).toLowerCase().includes(query));
+ listEl.innerHTML = visible.map(l => `<button class="lesson-item ${l.day===activeDay?"active":""} ${completed.includes(l.day)?"done":""}" data-day="${l.day}">
+ <span class="day-num">${completed.includes(l.day)?"✓":String(l.day).padStart(2,"0")}</span><span class="lesson-meta"><strong>${l.title}</strong><small>${l.category} · ${l.time}</small></span></button>`).join("");
+ if(!visible.length) listEl.innerHTML = '<div class="empty" style="display:block">No lessons match that search.</div>';
+ listEl.querySelectorAll("[data-day]").forEach(btn=>btn.addEventListener("click",()=>showLesson(Number(btn.dataset.day))));
+}
+function previewHTML(type){
+ const common = 'style="font-family:Arial,sans-serif"';
+ const examples = {
+  basic:`<div ${common}><h2>Hello, Sunnydale!</h2><p>This is my first webpage.</p></div>`,
+  text:`<div ${common}><h2>About Me</h2><p>Hello! I enjoy science and coding.</p><h3>My Goal</h3><p>I want to create useful websites.</p></div>`,
+  colour:`<div style="background:lightblue;color:darkblue;padding:16px;border-radius:8px;font-family:Arial"><h2>Colourful Coding</h2><p>CSS makes pages look better.</p></div>`,
+  moving:`<div style="overflow:hidden;font-family:Arial"><strong style="display:inline-block;animation:demoSlide 3s ease-in-out infinite alternate">Welcome to our computer class! ↔</strong></div><style>@keyframes demoSlide{to{transform:translateX(30px)}}</style>`,
+  announcement:`<div style="background:#fff3cd;border:2px solid #f0bd4f;padding:12px;border-radius:10px;font-family:Arial"><strong>Announcement</strong><p>Today is our Fifth Computer Class at Computer Lab!</p></div>`,
+  emoji:`<div style="font-family:Arial"><h2>😊 My Favourites</h2><p>💙 Colour: Blue</p><p>💻 Hobby: Coding</p><p>🍕 Food: Pizza</p></div>`,
+  personal:`<div style="font-family:Arial"><h2>Welcome to My Page</h2><p>My name is Alex and I enjoy coding.</p><b>My Hobbies</b><ul><li>Reading</li><li>Science</li><li>Building websites</li></ul></div>`,
+  table:`<table style="border-collapse:collapse;width:100%;font-family:Arial"><tr style="background:#2456a6;color:white"><th style="padding:8px;border:1px solid #bbb">Day</th><th style="padding:8px;border:1px solid #bbb">Subject</th></tr><tr><td style="padding:8px;border:1px solid #bbb">Sunday</td><td style="padding:8px;border:1px solid #bbb">Math</td></tr><tr><td style="padding:8px;border:1px solid #bbb">Monday</td><td style="padding:8px;border:1px solid #bbb">Science</td></tr></table>`,
+  border:`<div style="border:2px solid #2456a6;padding:16px;margin:5px;border-radius:8px;font-family:Arial"><b>A neat card</b><p>Padding adds inner space. Margin adds outer space.</p></div>`,
+  rainbow:`<h2 style="font-family:Arial;background:linear-gradient(90deg,red,orange,#d6ad00,green,blue,violet);background-clip:text;-webkit-background-clip:text;color:transparent">Rainbow Coding!</h2>`,
+  race:`<div style="background:#e7edf5;padding:8px;margin:8px 0;border-radius:6px">🐢 ───────────────────</div><div style="background:#e7edf5;padding:8px;margin:8px 0;border-radius:6px">🐇 ─────────────</div><div style="background:#e7edf5;padding:8px;margin:8px 0;border-radius:6px">🚗 ───────</div>`,
+  sections:`<div style="font-family:Arial"><div style="background:#2456a6;color:white;padding:12px;border-radius:6px"><b>Welcome to Sunnydale!</b></div><h3>About Me</h3><p>I enjoy learning and creating websites.</p><h3>My Goals</h3><p>✓ Learn HTML　✓ Practise CSS</p></div>`,
+  animation:`<div style="height:100px;background:#eaf0ff;padding:10px;border-radius:8px;overflow:hidden"><div style="width:35px;height:35px;background:#e84343;animation:demoMove 3s ease-in-out infinite alternate"></div></div><style>@keyframes demoMove{to{transform:translateX(230px) rotate(180deg)}}</style>`
+ };
+ return examples[type] || examples.basic;
+}
+function showLesson(day){
+ activeDay = day;
+ const l = lessons.find(x=>x.day===day);
+ if(!l) return;
+ renderList();
+ panelEl.innerHTML = `
+ <div class="lesson-banner"><div class="lesson-kicker">Day ${String(l.day).padStart(2,"0")} / 13 · ${l.category}</div><h2>${l.title}</h2><p>${l.summary}</p></div>
+ <div class="lesson-body">
+  <div class="chips"><span class="chip">◷ ${l.time}</span><span class="chip">${l.level}</span><span class="chip">${completed.includes(l.day)?"✓ Completed":"In progress"}</span></div>
+  <h3>What you'll learn</h3><ul>${l.learn.map(x=>`<li>${escapeHTML(x)}</li>`).join("")}</ul>
+  <h3>Code example</h3><p>Read the example, then copy it to try in your own HTML file.</p>
+  <div class="codebox"><div class="codehead"><span>example.html</span><button class="copy-btn" id="copyCode">Copy code</button></div><pre><code id="codeText"></code></pre></div>
+  <h3>Quick preview</h3><div class="preview">${previewHTML(l.preview)}</div>
+  <div class="tip"><strong>💡 Tip:</strong> ${escapeHTML(l.tip)}</div>
+  <div class="quiz"><h3>Quick check</h3><p>${escapeHTML(l.question)}</p>
+  ${l.options.map((o,i)=>`<label class="quiz-option"><input type="radio" name="quiz" value="${i}"> <code>${escapeHTML(o)}</code></label>`).join("")}
+  <button class="primary-btn" id="checkAnswer">Check answer</button><div class="quiz-feedback" id="quizFeedback"></div></div>
+  <div class="lesson-footer"><button class="ghost-btn" id="prevBtn" ${l.day===1?"disabled":""}>← Previous day</button><button class="primary-btn" id="completeBtn">${completed.includes(l.day)?"✓ Completed":"Mark complete ✓"}</button><button class="ghost-btn" id="nextBtn" ${l.day===13?"disabled":""}>Next day →</button></div>
+ </div>`;
+ document.getElementById("codeText").textContent = l.code;
+ document.getElementById("copyCode").addEventListener("click",()=>copyText(l.code));
+ document.getElementById("checkAnswer").addEventListener("click",()=>{
+   const chosen = panelEl.querySelector('input[name="quiz"]:checked');
+   const feedback = document.getElementById("quizFeedback");
+   if(!chosen){feedback.textContent="Choose an answer first.";return;}
+   if(Number(chosen.value)===l.answer){feedback.textContent="Correct! "+l.explain;feedback.style.color="var(--green)";}
+   else {feedback.textContent="Not quite. Try again!";feedback.style.color="var(--pink)";}
+ });
+ document.getElementById("completeBtn").addEventListener("click",()=>{
+   if(!completed.includes(l.day)) completed.push(l.day);
+   saveProgress(); showLesson(l.day);
+ });
+ document.getElementById("prevBtn").addEventListener("click",()=>showLesson(l.day-1));
+ document.getElementById("nextBtn").addEventListener("click",()=>showLesson(l.day+1));
+}
+function saveProgress(){
+ localStorage.setItem("htmlMasterclassCompleted",JSON.stringify(completed));
+ document.getElementById("completedCount").textContent=completed.length;
+ const pct=Math.round(completed.length/lessons.length*100);
+ document.getElementById("progressPercent").textContent=pct+"%";
+ document.getElementById("progressFill").style.width=pct+"%";
+ renderList();
+}
+async function copyText(text){
+ try{await navigator.clipboard.writeText(text);showToast("Code copied!");}
+ catch(e){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();showToast("Code copied!");}
+}
+function showToast(message){toastEl.textContent=message;toastEl.classList.add("show");setTimeout(()=>toastEl.classList.remove("show"),1600);}
+document.querySelectorAll(".filter-btn").forEach(btn=>btn.addEventListener("click",()=>{
+ filter=btn.dataset.filter;document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b===btn));renderList();
+}));
+searchEl.addEventListener("input",renderList);
+document.getElementById("startBtn").addEventListener("click",()=>{showLesson(1);document.getElementById("lessons").scrollIntoView({behavior:"smooth"});});
+document.getElementById("browseBtn").addEventListener("click",()=>document.getElementById("lessons").scrollIntoView({behavior:"smooth"}));
+document.getElementById("continueBtn").addEventListener("click",()=>{
+ const next=lessons.find(l=>!completed.includes(l.day));
+ showLesson(next?next.day:1);document.getElementById("lessons").scrollIntoView({behavior:"smooth"});
+});
+document.getElementById("resetProgress").addEventListener("click",()=>{
+ if(confirm("Reset all completed lessons?")){completed=[];saveProgress();showLesson(1);showToast("Progress reset.");}
+});
+saveProgress();
+showLesson(1);
 </script>
 </body>
 </html>
